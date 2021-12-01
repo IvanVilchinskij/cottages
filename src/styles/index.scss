@@ -1,0 +1,49 @@
+@import "./reset";
+
+// Abstracts
+@import "./variables";
+@import "./mixins";
+
+// Common
+@import "./common/titles";
+@import "./common/text";
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+  overflow-x: hidden;
+
+  &.open-menu {
+    overflow: hidden;
+  }
+}
+
+section {
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1240px;
+  padding: 0 30px;
+  margin: 0 auto;
+  position: relative;
+
+  @media (max-width: 575px) {
+    padding: 0 15px;
+  }
+}
+
+// Components
+@import "./components/header";
+@import "./components/slider";
+@import "./components/presentation";
+@import "./components/footer";
+
+// Screens
+@import "./screens/main_screen";
+@import "./screens/about";
+@import "./screens/cottages";
+@import "./screens/location";
+@import "./screens/advantages";
+@import "./screens/technology";
+@import "./screens/payment_types";
+@import "./screens/contacts";

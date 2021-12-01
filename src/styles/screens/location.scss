@@ -1,0 +1,109 @@
+.location {
+  padding: 90px 0 130px;
+  overflow: hidden;
+
+  @media (max-width: 991px)  {
+    padding: 90px 0 130px;
+  }
+
+  @media (max-width: 575px) {
+    padding: 45px 0 80px;
+  }
+
+  .container {
+    @include flex-center;
+    justify-content: space-between;
+
+    @media (max-width: 991px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &::before {
+      content: '';
+      width: 50%;
+      height: 150%;
+      position: absolute;
+      bottom: -164.5%;
+      left: -39%;
+      background: url('../../assets/images/decoration.png') center center/contain repeat;
+      z-index: -1;
+
+      @media (max-width: 1199px) {
+        display: none;
+      }
+    }
+  }
+
+  &__info {
+    flex: 1 0 400px;
+    max-width: 480px;
+
+    @media (max-width: 991px) {
+      flex: 1 0 auto;
+      max-width: 100%;
+      margin-bottom: 48px;
+    }
+  }
+
+  &__map {
+    @media (max-width: 991px) {
+      width: 90%;
+    }
+  }
+
+  &__title-xl {
+    top: -0.2em;
+    left: 10px;
+
+    @media (max-width: 1199px) {
+      top: 0;
+    }
+
+    @media (max-width: 991px) {
+      top: -0.4em;
+    }
+  }
+
+  &__title {
+    margin: 92px 0 48px;
+
+    @media (max-width: 991px) {
+      margin: 0 0 48px;
+    }
+
+    @media (max-width: 575px) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__img {
+    position: relative;
+
+    img {
+      width: 100%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 10.5%;
+      right: -7.2%;
+      width: 100%;
+      height: 100%;
+      background-color: $secondary-color;
+      z-index: -1;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 15%;
+      left: 14%;
+      height: 114%;
+      width: 300%;
+      background: url('../../assets/images/decoration.png') center center/contain repeat;
+      z-index: -1;
+    }
+  }
+}

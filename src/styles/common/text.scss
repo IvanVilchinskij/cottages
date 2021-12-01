@@ -1,0 +1,14 @@
+.text {
+  font-size: 1.25rem;
+  line-height: 110%;
+  font-weight: 300;
+  color: $black;
+
+  @media (max-width: 575px)  {
+    font-size: 1rem;
+  }
+
+  &_fz18 {
+    font-size: 1.125rem;
+  }
+}

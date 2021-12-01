@@ -1,0 +1,35 @@
+.cottages {
+  padding: 40px 0 75px;
+  background-color: $bg-color;
+
+  @media (max-width: 991px) {
+    padding: 40px 0 150px;
+  }
+
+  @media (max-width: 575px) {
+    padding: 40px 0 100px;
+  }
+
+  &__title {
+    margin-bottom: 28px;
+  }
+
+  &__decoration {
+    position: absolute;
+    bottom: -30px;
+    left: -0.5%;
+    z-index: -1;
+
+    @media (max-width: 1399px) {
+      left: 6%;
+    }
+
+    @media (max-width: 991px) {
+      left: -25%;
+    }
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+}

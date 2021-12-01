@@ -1,0 +1,179 @@
+.main {
+  position: relative;
+  background: url("../../assets/images/bgs/main-bg.jpg") center center/cover no-repeat;
+  overflow-x: hidden;
+  z-index: 10;
+
+  .container {
+    padding: 0 30px 141px;
+
+    @media (max-width: 767px) {
+      padding: 0 30px 75px;
+    }
+
+    @media (max-width: 575px) {
+      padding: 0 15px 75px;
+    } 
+  }
+
+  &__bg-line-wrapper {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    width: calc(100% - 60px);
+    height: 100%;
+    z-index: 1;
+
+    @media (max-width: 575px) {
+      left: 15px;
+      width: calc(100% - 30px);
+    }
+  }
+
+  &__bg-line {
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: rgba(255, 255, 255, .2);
+  }
+
+  @for $i from 1 through 5 {
+    .main__bg-line_#{$i} {
+      left: calc((#{$i} - 1) * 25%);
+      transform: translate(-50%, 0);
+    }
+  }
+
+  .hidden-sm {
+    @media (max-width: 575px) {
+      display: none;
+    } 
+  }
+
+  .main__bg-line_5 {
+    transform: translate(calc(-50% - 1px), 0);
+  }
+}
+
+.main-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+
+  &__left {
+    flex: 1 2 auto;
+    margin-right: 10px;
+
+    @media (max-width: 767px) {
+      margin-right: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__btn {
+    @include reset-link;
+    display: inline-block;
+    font-size: 1.125rem;
+    line-height: 140%;
+    font-weight: bold;
+    color: $black;
+    padding: 1.11em 1.67em;
+    cursor: pointer;
+    background-color: $primary-color;
+    border: none;
+    margin-bottom: 40px;
+    @include transition(background-color);
+
+    @media (max-width: 767px) {
+      font-size: 1rem;
+      margin-bottom: 32px;
+    }
+
+    &:hover {
+      background-color: darken($color: $primary-color, $amount: 10%);
+    }
+  }
+  
+  &__right {
+    flex: 1 1 296px;
+
+    @media (max-width: 767px) {
+      flex: 1 1 auto;
+    }
+  }
+
+  &__cottages-info {
+    display: flex;
+  }
+}
+
+.cottages-info {
+  display: flex;
+  max-width: 260px;
+
+  @media (max-width: 767px) {
+    margin-bottom: 20px;
+  }
+
+  &__count {
+    font-size: 8rem;
+    line-height: 83.7%;
+    color: #fff;
+    margin-right: 20px;
+
+    @media (max-width: 575px) {
+      font-size: 4.375rem;
+      margin-right: 10px;
+    }
+  }
+
+  &__text {
+    font-size: 1.25rem;
+    line-height: 140%;
+    color: #fff;
+
+    @media (max-width: 575px) {
+      font-size: .75rem;
+    }
+
+    span {
+      line-height: 0;
+    }
+
+    sup {
+      font-size: .75rem;
+
+      @media (max-width: 575px) {
+        font-size: .5rem;
+      }
+    }
+  }
+
+  &:first-child {
+    margin-right: 26px;
+  }
+}
+
+.accent-info {
+  font-size: 1rem;
+  line-height: 120%;
+  color: #fff;
+  margin-top: 15px;
+
+  @media (max-width: 575px) {
+    font-size: .875rem;
+  }
+
+  span {
+    font-weight: bold;
+  }
+}

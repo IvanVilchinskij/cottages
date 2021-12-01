@@ -1,0 +1,91 @@
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.2em;
+  color: $black;
+
+  @media (max-width: 575px) {
+    font-size: 1.75rem;
+  }
+
+  &_white-sm {
+    font-size: 2.375rem;
+    line-height: 140%;
+    color: #fff;
+
+    @media (max-width: 575px) {
+      font-size: 1.75rem;
+    }
+  }
+
+  &_s {
+    font-size: 2.25rem;
+
+    @media (max-width: 575px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  &_xs {
+    font-size: 2rem;
+    line-height: 119%;
+
+    @media (max-width: 575px) {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.xl-title {
+  position: absolute;
+  font-size: 18rem;
+  line-height: 109%;
+  font-weight: bold;
+  color: $black;
+  opacity: .05;
+  white-space: nowrap;
+  z-index: -1;
+
+  @media (max-width: 1199px) {
+    font-size: 14rem;
+  }
+
+  @media (max-width: 991px) {
+    font-size: 10rem;
+  }
+
+  @media (max-width: 575px) {
+    font-size: 5rem;
+  }
+
+  &_upper {
+    text-transform: uppercase;
+  }
+
+  &_m {
+    font-size: 14.6em;
+  
+    @media (max-width: 991px) {
+      font-size: 10.6rem;
+    }
+  
+    @media (max-width: 575px) {
+      font-size: 4rem;
+    }
+  }
+}
+
+.item-title {
+  font-size: 1.5em;
+  line-height: 120%;
+  font-weight: bold;
+  color: $black;
+
+  &_mb20 {
+    margin-bottom: 20px;
+  }
+
+  &_mb12 {
+    margin-bottom: 12px;
+  }
+}

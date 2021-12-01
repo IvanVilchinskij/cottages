@@ -1,0 +1,139 @@
+.slider {
+  position: relative;
+  width: 100%;
+  min-height: 414px;
+  padding: 0 10px;
+  display: flex;
+
+  @media (max-width: 1399px) {
+    padding: 0 8%;
+  }
+
+  @media (max-width: 991px) {
+    padding: 0;
+  }
+
+  @media (max-width: 767px) {
+    min-height: 1px;
+  }
+
+  &__track {
+    display: flex;
+    overflow: hidden;
+  }
+
+  &__item {
+    min-width: 100%;
+    @include fullWidthANdHeight;
+    display: flex;
+    padding: 0 2px;
+    justify-content: space-between;
+    transition: transform .4s ease-in-out;
+
+    @media (max-width: 767px) {
+      flex-direction: column-reverse;
+    }
+
+    div {
+      @media (max-width: 767px) {
+        flex: 1 0 auto;
+      }
+    }
+  }
+
+  &__img-first {
+    flex: 3 0 65%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__img-second {
+    flex: 2 0 35%;
+
+    @media (max-width: 767px) {
+      margin-bottom: 15px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__prev, &__next {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: $secondary-color;
+    border: none;
+    bottom: 50%;
+    transform: translate(0, 50%);
+    cursor: pointer;
+    @include flex-center;
+    justify-content: center;
+    opacity: 1;
+    @include transition(all);
+
+    @media (max-width: 991px) {
+      bottom: -50px;
+    }
+
+    @media (max-width: 575px) {
+      width: 34px;
+      height: 34px;
+      bottom: -32px;
+    }
+
+    svg {
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      min-height: 22px;
+
+      @media (max-width: 575px) {
+        height: 16px;
+        width: 16px;
+        min-height: 16px;
+        min-width: 16px;
+      }
+    }
+
+    &:disabled {
+      opacity: 0.5;
+
+      &:hover {
+        background-color: $secondary-color ;
+      }
+    }
+
+    &:hover {
+      background-color: darken($color: $primary-color, $amount: 15%) ;
+    }
+
+    &:active {
+      transform: translate(0, 50%) scale(.9);
+    }
+  }
+
+  &__prev {
+    left: -80px;
+
+    @media (max-width: 1399px) {
+      left: 0;
+    }
+  }
+
+  &__next {
+    right: -80px;
+
+    @media (max-width: 1399px) {
+      right: 0%;
+    }
+  }
+}

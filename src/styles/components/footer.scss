@@ -1,0 +1,53 @@
+.footer {
+  padding: 100px 0 50px;
+
+  @media (max-width: 767px) {
+    padding: 75px 0 25px;
+  }
+
+  .container {
+    @include flex-center;
+    justify-content: center;
+  }
+
+  &__list {
+    flex: 1 1 40%;
+    max-width: 60%;
+    @include flex-center;
+    justify-content: space-between;
+
+    @media (max-width: 991px) {
+      max-width: 80%;
+    }
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    @media (max-width: 767px) {
+      margin-bottom: 18px;
+    }
+
+    a {
+      position: relative;
+      @include reset-link;
+      color: $black;
+      @include transition(color);
+
+      &::before {
+        @include link-decoration;
+        height: .1em;
+      }
+
+      &:hover {
+        color: $primary-color;
+        &:before {
+          opacity: 1;
+          bottom: -5px;
+        }  
+      }
+    }
+  }
+}
